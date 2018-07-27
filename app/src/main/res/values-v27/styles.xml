@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Theme for API 27 with white navigation and white status bar -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/blue</item>
+        <item name="android:windowBackground">@color/white</item>
+        <!-- API 23 -->
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- API 27, even though Android Studio says API 28 -->
+        <item name="android:windowLightNavigationBar">true</item>
+        <!-- API 21 -->
+        <item name="android:navigationBarColor">@color/white</item>
+    </style>
+</resources>
