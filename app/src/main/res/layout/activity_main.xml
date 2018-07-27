@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- other views -->
+    <include layout="@layout/content_main" />
 
     <!-- Ugly drop shadow hack -->
     <View

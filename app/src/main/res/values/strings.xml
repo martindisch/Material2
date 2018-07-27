@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Material2</string>
     <string name="options">Options</string>
+    <string name="hello">Hello world</string>
 </resources>
