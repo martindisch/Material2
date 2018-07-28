@@ -2,4 +2,9 @@
     <string name="app_name">Material2</string>
     <string name="options">Options</string>
     <string name="hello">Hello world</string>
+    <string name="default_name">John Doe</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="vegetarian">Vegetarian</string>
+    <string name="married">Married</string>
 </resources>
