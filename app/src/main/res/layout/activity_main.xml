@@ -28,15 +28,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:fabCradleMargin="0dp"
-        app:fabCradleRoundedCornerRadius="-1dp"
         app:navigationIcon="@drawable/ic_menu" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/fab_height"
+        android:text="@string/add_item"
+        app:cornerRadius="@dimen/fab_corner_radius"
+        app:icon="@drawable/ic_add"
         app:layout_anchor="@id/bar"
-        app:srcCompat="@drawable/ic_add" />
+        app:layout_anchorGravity="center_horizontal"
+        app:textAllCaps="false" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

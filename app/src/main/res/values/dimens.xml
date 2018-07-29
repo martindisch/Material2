@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_height">56dp</dimen>
+    <dimen name="fab_corner_radius">28dp</dimen>
+    <dimen name="bottom_sheet_corner_radius">16dp</dimen>
+</resources>
