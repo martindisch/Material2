@@ -4,10 +4,10 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
-import com.martindisch.material2.databinding.ActivityMainBinding;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,14 +15,29 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Obtain ViewModel
-        UserViewModel viewModel = ViewModelProviders.of(this).get(UserViewModel.class);
-        // Inflate view and obtain instance of the binding class
-        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        // Assign the viewmodel to the binding class
-        binding.setViewmodel(viewModel);
-        // Set activity as lifecycle owner to make it update
-        binding.setLifecycleOwner(this);
+        setContentView(R.layout.activity_main);
+
+        if (savedInstanceState == null) {
+            // Acquire ViewModel
+            MainViewModel viewModel = ViewModelProviders.of(this).get(MainViewModel.class);
+            // Register Observer to replace Fragment when necessary
+            viewModel.getCurrentFragment().observe(this, new Observer<Integer>() {
+                @Override
+                public void onChanged(Integer fragment_id) {
+                    Fragment fragment = null;
+                    switch (fragment_id) {
+                        case MainViewModel.FRAGMENT_USER:
+                            fragment = UserFragment.newInstance();
+                            break;
+                        case MainViewModel.FRAGMENT_LIST:
+                            // TODO
+                            fragment = null;
+                            break;
+                    }
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+                }
+            });
+        }
 
         BottomAppBar bottomAppBar = findViewById(R.id.bar);
         bottomAppBar.inflateMenu(R.menu.bottom_bar_menu);

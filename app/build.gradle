@@ -25,13 +25,15 @@ dependencies {
     def lifecycle_version = "2.0.0-beta01"
     def materialcomponents_version = "1.0.0-beta01"
     def constraintlayout_version = "1.1.2"
+    def fragment_version = "1.0.0-beta01"
 
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
     // ViewModel and LiveData
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     // Material Components
     implementation "com.google.android.material:material:$materialcomponents_version"
-
+    // Fragment
+    implementation "androidx.fragment:fragment:$fragment_version"
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 }
