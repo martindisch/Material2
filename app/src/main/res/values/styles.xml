@@ -6,4 +6,18 @@
         <item name="colorAccent">@color/blue</item>
         <item name="android:windowBackground">@color/white</item>
     </style>
+
+    <!-- Sets the rounded drawable as background for the bottom sheet -->
+    <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_dialog</item>
+    </style>
+
+    <!-- Prevents dialog floating -->
+    <style name="BaseBottomSheetDialog" parent="@style/Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="bottomSheetStyle">@style/BottomSheet</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="BaseBottomSheetDialog" />
+
 </resources>

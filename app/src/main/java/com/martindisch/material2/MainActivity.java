@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         BottomAppBar bottomAppBar = findViewById(R.id.bar);
         bottomAppBar.inflateMenu(R.menu.bottom_bar_menu);
-        bottomAppBar.setNavigationOnClickListener(view -> getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, ItemFragment.newInstance()).commit());
+        bottomAppBar.setNavigationOnClickListener(view ->
+                new BottomDrawerFragment().show(getSupportFragmentManager(), "bottom_drawer"));
     }
 }

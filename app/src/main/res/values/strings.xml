@@ -11,4 +11,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_item">Add item</string>
+    <string name="user_data">User data</string>
+    <string name="overview">List overview</string>
+    <string name="dummy1">Dummy 1</string>
+    <string name="dummy2">Dummy 2</string>
+    <string name="dummy3">Dummy 3</string>
 </resources>

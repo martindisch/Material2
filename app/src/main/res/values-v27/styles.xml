@@ -13,4 +13,12 @@
         <!-- API 21 -->
         <item name="android:navigationBarColor">@color/white</item>
     </style>
+
+    <style name="BottomSheetDialogTheme" parent="BaseBottomSheetDialog">
+        <!-- Make scrim effect cover the status bar -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!-- White navigation bar -->
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
 </resources>
