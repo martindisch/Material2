@@ -1,7 +1,6 @@
 package com.martindisch.material2;
 
 import android.os.Bundle;
-import android.view.View;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
 
@@ -20,11 +19,6 @@ public class MainActivity extends AppCompatActivity {
 
         BottomAppBar bottomAppBar = findViewById(R.id.bar);
         bottomAppBar.inflateMenu(R.menu.bottom_bar_menu);
-        bottomAppBar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, ItemFragment.newInstance()).commit();
-            }
-        });
+        bottomAppBar.setNavigationOnClickListener(view -> getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, ItemFragment.newInstance()).commit());
     }
 }
