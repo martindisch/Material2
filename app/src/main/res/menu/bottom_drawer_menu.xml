@@ -6,7 +6,7 @@
             android:icon="@drawable/ic_person"
             android:title="@string/user_data" />
         <item
-            android:id="@+id/action_list"
+            android:id="@+id/action_item"
             android:icon="@drawable/ic_view_list"
             android:title="@string/overview" />
         <item
