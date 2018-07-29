@@ -14,9 +14,9 @@
     <!-- Ugly drop shadow hack -->
     <View
         android:layout_width="match_parent"
-        android:layout_height="4dp"
+        android:layout_height="@dimen/drop_shadow_height"
         android:layout_gravity="top"
-        android:background="@drawable/shadow"
+        android:background="@drawable/drop_shadow"
         app:layout_anchor="@id/bar" />
 
     <!-- Because of the manually inserted drop shadow for the Bottom App Bar, it's not possible
