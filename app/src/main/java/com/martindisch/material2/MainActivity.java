@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         bottomAppBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: show navigation
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, ItemFragment.newInstance()).commit();
             }
         });
     }
