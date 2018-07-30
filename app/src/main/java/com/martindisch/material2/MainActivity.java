@@ -19,12 +19,12 @@ public class MainActivity extends AppCompatActivity {
         // Acquire ViewModel
         NavigationViewModel navigationViewModel = ViewModelProviders.of(this).get(NavigationViewModel.class);
         navigationViewModel.getSelectedItem().observe(this, selectedItem -> {
-            // Try getting the Fragment from FragmentManager (if it is still shown)
+            // Get the Fragment currently in the container
             FragmentManager fragmentManager = getSupportFragmentManager();
             String tag = navigationViewModel.idToTag(selectedItem);
-            Fragment fragment = fragmentManager.findFragmentByTag(tag);
-            // If that's not the case, instantiate a new one
-            if (fragment == null) {
+            Fragment fragment = fragmentManager.findFragmentById(R.id.fragment_container);
+            // Only replace fragment if the requested one is not already present
+            if (fragment == null || !fragment.getTag().contentEquals(tag)) {
                 switch (selectedItem) {
                     case R.id.action_user:
                         fragment = UserFragment.newInstance();
@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
                         fragment = ItemFragment.newInstance();
                         tag = "FRAGMENT_ITEM";
                 }
+                // Replace the fragment
+                fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment, tag).commit();
             }
-            // Replace the fragment
-            fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment, tag).commit();
         });
 
         BottomAppBar bottomAppBar = findViewById(R.id.bar);
