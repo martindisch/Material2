@@ -47,6 +47,8 @@ public class BottomDrawerFragment extends BottomSheetDialogFragment {
         navigationView.setCheckedItem(navigationViewModel.getSelectedItem().getValue());
 
         navigationView.setNavigationItemSelectedListener(menuItem -> {
+            // Hide the bottom sheet
+            dismiss();
             // Update the ViewModel
             navigationViewModel.getSelectedItem().setValue(menuItem.getItemId());
             // Return true to show the selected item as checked
