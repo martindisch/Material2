@@ -5,4 +5,8 @@
     <color name="gray">#9E9E9E</color>
     <color name="gray_600">#757575</color>
     <color name="divider">#EEEEEE</color>
+
+    <color name="colorPrimary">@color/white</color>
+    <color name="colorPrimaryDark">@color/gray</color>
+    <color name="colorAccent">@color/blue</color>
 </resources>
