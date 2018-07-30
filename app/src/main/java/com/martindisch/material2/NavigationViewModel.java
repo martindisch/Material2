@@ -17,7 +17,7 @@ public class NavigationViewModel extends ViewModel {
     };
     private static final String[] TAGS = {
             "FRAGMENT_USER",
-            "FRAGMENT_LIST",
+            "FRAGMENT_ITEM",
             "FRAGMENT_DUMMY1",
             "FRAGMENT_DUMMY2",
             "FRAGMENT_DUMMY3"
