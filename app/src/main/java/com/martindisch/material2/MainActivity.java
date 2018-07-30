@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     default:
                         fragment = ItemFragment.newInstance();
-                        tag = "FRAGMENT_ITEM";
+                        break;
                 }
                 // Replace the fragment
                 fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment, tag).commit();
