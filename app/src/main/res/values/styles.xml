@@ -12,9 +12,11 @@
         <item name="android:background">@drawable/bottom_sheet_dialog</item>
     </style>
 
-    <!-- Prevents dialog floating -->
     <style name="BaseBottomSheetDialog" parent="@style/Theme.Design.Light.BottomSheetDialog">
+        <!-- Prevents dialog floating -->
         <item name="android:windowIsFloating">false</item>
+        <!-- Sets the tint color for checked menu items -->
+        <item name="colorPrimary">@color/blue</item>
         <item name="bottomSheetStyle">@style/BottomSheet</item>
     </style>
 
