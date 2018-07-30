@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.martindisch.material2.Item" />
+
+        <variable
+            name="callback"
+            type="com.martindisch.material2.ItemAdapter.ItemCallback" />
+
+        <import type="androidx.core.content.ContextCompat" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> callback.onClick(item)}"
+        tools:layout_editor_absoluteY="25dp">
+
+        <ImageView
+            android:id="@+id/ivItemImage"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:src="@{ContextCompat.getDrawable(context, item.image)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_person" />
+
+        <TextView
+            android:id="@+id/tvItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@{item.text}"
+            app:layout_constraintStart_toEndOf="@+id/ivItemImage"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/hello" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
