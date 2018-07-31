@@ -58,14 +58,13 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     @Override
     public ItemAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        ListItemBinding binding = ListItemBinding.inflate(LayoutInflater.from(parent.getContext()));
-        binding.setCallback(mCallback);
-        return new ViewHolder(binding);
+        return new ViewHolder(ListItemBinding.inflate(LayoutInflater.from(parent.getContext())));
     }
 
     @Override
     public void onBindViewHolder(ItemAdapter.ViewHolder holder, int position) {
         holder.binding.setItem(mItems.get(position));
+        holder.binding.setOnClickListener(mCallback);
         holder.binding.executePendingBindings();
     }
 

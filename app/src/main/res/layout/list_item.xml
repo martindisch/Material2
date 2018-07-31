@@ -10,7 +10,7 @@
             type="com.martindisch.material2.Item" />
 
         <variable
-            name="callback"
+            name="onClickListener"
             type="com.martindisch.material2.ItemAdapter.ItemCallback" />
 
         <import type="androidx.core.content.ContextCompat" />
@@ -19,7 +19,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="@{() -> callback.onClick(item)}"
+        android:onClick="@{() -> onClickListener.onClick(item)}"
         tools:layout_editor_absoluteY="25dp">
 
         <ImageView
