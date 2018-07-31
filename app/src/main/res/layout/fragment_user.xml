@@ -6,7 +6,7 @@
     <data>
 
         <variable
-            name="viewmodel"
+            name="viewModel"
             type="com.martindisch.material2.UserViewModel" />
     </data>
 
@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
-                android:text="@={viewmodel.name}" />
+                android:text="@={viewModel.name}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -49,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
-                android:text="@={viewmodel.address}" />
+                android:text="@={viewModel.address}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <CheckBox
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
-            android:checked="@={viewmodel.vegetarian}"
+            android:checked="@={viewModel.vegetarian}"
             android:text="@string/vegetarian"
             app:layout_constraintBottom_toTopOf="@+id/cbMarried"
             app:layout_constraintStart_toStartOf="parent" />
@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="96dp"
-            android:checked="@={viewmodel.married}"
+            android:checked="@={viewModel.married}"
             android:text="@string/married"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

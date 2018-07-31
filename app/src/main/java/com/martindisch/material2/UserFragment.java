@@ -31,7 +31,7 @@ public class UserFragment extends Fragment {
         // Inflate view and obtain instance of the binding class
         FragmentUserBinding binding = FragmentUserBinding.inflate(inflater, container, false);
         // Assign the viewmodel to the binding class
-        binding.setViewmodel(viewModel);
+        binding.setViewModel(viewModel);
         // Set fragment as lifecycle owner to make it update
         binding.setLifecycleOwner(this);
         return binding.getRoot();
