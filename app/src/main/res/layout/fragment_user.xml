@@ -12,14 +12,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="@dimen/activity_margin">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:hint="@string/name"
             app:layout_constraintBottom_toTopOf="@+id/tilAddress"
@@ -37,8 +36,6 @@
             android:id="@+id/tilAddress"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:hint="@string/address"
             app:layout_constraintBottom_toTopOf="@+id/cbVegetarian"
@@ -56,7 +53,6 @@
             android:id="@+id/cbVegetarian"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
             android:checked="@={viewModel.vegetarian}"
             android:text="@string/vegetarian"
@@ -67,8 +63,7 @@
             android:id="@+id/cbMarried"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
             android:checked="@={viewModel.married}"
             android:text="@string/married"
             app:layout_constraintBottom_toBottomOf="parent"

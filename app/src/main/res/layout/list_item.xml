@@ -19,19 +19,18 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="@{() -> onClickListener.onClick(item)}"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        tools:layout_editor_absoluteY="25dp">
+        android:onClick="@{() -> onClickListener.onClick(item)}">
 
         <ImageView
             android:id="@+id/ivItemImage"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="@dimen/activity_margin"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:scaleType="centerCrop"
             android:src="@{ContextCompat.getDrawable(context, item.image)}"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@drawable/ic_person" />
