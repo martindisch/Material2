@@ -3,6 +3,9 @@ package com.martindisch.material2;
 import android.os.Bundle;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
+import com.google.android.material.button.MaterialButton;
+
+import java.util.LinkedList;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -45,5 +48,17 @@ public class MainActivity extends AppCompatActivity {
         bottomAppBar.inflateMenu(R.menu.bottom_bar_menu);
         bottomAppBar.setNavigationOnClickListener(view ->
                 new BottomDrawerFragment().show(getSupportFragmentManager(), "bottom_drawer"));
+
+        ItemListViewModel listViewModel = ViewModelProviders.of(this).get(ItemListViewModel.class);
+        MaterialButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(view -> {
+            // Get list of items
+            LinkedList<Item> items = (LinkedList<Item>) listViewModel.getItems().getValue();
+            // Clone it so we don't insert into the existing instance (DiffUtil wouldn't find difference)
+            LinkedList<Item> newItems = (LinkedList<Item>) items.clone();
+            // Add item
+            newItems.add(5, new Item());
+            listViewModel.getItems().setValue(newItems);
+        });
     }
 }

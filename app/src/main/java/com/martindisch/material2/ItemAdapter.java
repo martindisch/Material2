@@ -6,7 +6,6 @@ import android.view.ViewGroup;
 import com.martindisch.material2.databinding.ListItemBinding;
 
 import java.util.List;
-import java.util.Objects;
 
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,7 +46,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                     Item newItem = items.get(newItemPosition);
                     Item oldItem = mItems.get(oldItemPosition);
                     return newItem.getId() == oldItem.getId()
-                            && Objects.equals(newItem.getText(), oldItem.getText())
+                            && newItem.getText().contentEquals(oldItem.getText())
                             && newItem.getImage() == oldItem.getImage();
                 }
             });

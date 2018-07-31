@@ -1,6 +1,7 @@
 package com.martindisch.material2;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +33,7 @@ public class ItemFragment extends Fragment implements ItemAdapter.ItemCallback {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ItemListViewModel viewModel = ViewModelProviders.of(this).get(ItemListViewModel.class);
+        ItemListViewModel viewModel = ViewModelProviders.of(getActivity()).get(ItemListViewModel.class);
         subscribeUi(viewModel);
     }
 
@@ -47,6 +48,6 @@ public class ItemFragment extends Fragment implements ItemAdapter.ItemCallback {
 
     @Override
     public void onClick(Item item) {
-        // TODO
+        Log.d("ItemFragment", "Clicked item " + item.getText());
     }
 }
