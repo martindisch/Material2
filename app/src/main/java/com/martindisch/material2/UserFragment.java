@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 public class UserFragment extends Fragment {
 
-    private UserViewModel viewModel;
+    private UserViewModel mViewModel;
 
     public static UserFragment newInstance() {
         return new UserFragment();
@@ -22,7 +22,7 @@ public class UserFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Obtain ViewModel
-        viewModel = ViewModelProviders.of(this).get(UserViewModel.class);
+        mViewModel = ViewModelProviders.of(this).get(UserViewModel.class);
     }
 
     @Override
@@ -31,7 +31,7 @@ public class UserFragment extends Fragment {
         // Inflate view and obtain instance of the binding class
         FragmentUserBinding binding = FragmentUserBinding.inflate(inflater, container, false);
         // Assign the viewmodel to the binding class
-        binding.setViewModel(viewModel);
+        binding.setViewModel(mViewModel);
         // Set fragment as lifecycle owner to make it update
         binding.setLifecycleOwner(this);
         return binding.getRoot();

@@ -14,14 +14,14 @@ import androidx.lifecycle.ViewModelProviders;
 
 public class BottomDrawerFragment extends BottomSheetDialogFragment {
 
-    private NavigationView navigationView;
+    private NavigationView mNavigationView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_bottom_drawer, container, false);
-        navigationView = view.findViewById(R.id.bottom_drawer_navigation);
+        mNavigationView = view.findViewById(R.id.bottom_drawer_navigation);
 
         // Hack to get the sheet to fully expand in landscape (peek height is only about one list item by default)
         getDialog().setOnShowListener(dialog ->
@@ -44,9 +44,9 @@ public class BottomDrawerFragment extends BottomSheetDialogFragment {
         // Acquire ViewModel
         NavigationViewModel navigationViewModel = ViewModelProviders.of(getActivity()).get(NavigationViewModel.class);
         // Since the layout has been newly inflated, we need to check the selected item
-        navigationView.setCheckedItem(navigationViewModel.getSelectedItem().getValue());
+        mNavigationView.setCheckedItem(navigationViewModel.getSelectedItem().getValue());
 
-        navigationView.setNavigationItemSelectedListener(menuItem -> {
+        mNavigationView.setNavigationItemSelectedListener(menuItem -> {
             // Hide the bottom sheet
             dismiss();
             // Update the ViewModel
