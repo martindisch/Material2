@@ -26,6 +26,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        BottomAppBar bottomAppBar = findViewById(R.id.bar);
+        bottomAppBar.inflateMenu(R.menu.bottom_bar_menu);
+        bottomAppBar.setNavigationOnClickListener(view ->
+                new BottomDrawerFragment().show(getSupportFragmentManager(), "bottom_drawer"));
+
+        ItemListViewModel listViewModel = ViewModelProviders.of(this).get(ItemListViewModel.class);
+        MaterialButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(view -> {
+            // Get list of items
+            LinkedList<Item> items = (LinkedList<Item>) listViewModel.getItems().getValue();
+            // Clone it so we don't insert into the existing instance (DiffUtil wouldn't find difference)
+            LinkedList<Item> newItems = (LinkedList<Item>) items.clone();
+            // Add item at a random position within the list
+            newItems.add(new Random().nextInt(items.size() + 1), new Item());
+            listViewModel.getItems().setValue(newItems);
+        });
+
         // Acquire ViewModel
         NavigationViewModel navigationViewModel = ViewModelProviders.of(this).get(NavigationViewModel.class);
         navigationViewModel.getSelectedItem().observe(this, selectedItem -> {
@@ -49,23 +66,6 @@ public class MainActivity extends AppCompatActivity {
                 // Replace the fragment
                 fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment, tag).commit();
             }
-        });
-
-        BottomAppBar bottomAppBar = findViewById(R.id.bar);
-        bottomAppBar.inflateMenu(R.menu.bottom_bar_menu);
-        bottomAppBar.setNavigationOnClickListener(view ->
-                new BottomDrawerFragment().show(getSupportFragmentManager(), "bottom_drawer"));
-
-        ItemListViewModel listViewModel = ViewModelProviders.of(this).get(ItemListViewModel.class);
-        MaterialButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(view -> {
-            // Get list of items
-            LinkedList<Item> items = (LinkedList<Item>) listViewModel.getItems().getValue();
-            // Clone it so we don't insert into the existing instance (DiffUtil wouldn't find difference)
-            LinkedList<Item> newItems = (LinkedList<Item>) items.clone();
-            // Add item at a random position within the list
-            newItems.add(new Random().nextInt(items.size() + 1), new Item());
-            listViewModel.getItems().setValue(newItems);
         });
     }
 }
