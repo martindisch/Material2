@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ItemFragment extends Fragment implements ItemAdapter.ItemCallback {
@@ -25,6 +27,7 @@ public class ItemFragment extends Fragment implements ItemAdapter.ItemCallback {
         View view = inflater.inflate(R.layout.fragment_item, container, false);
         // Set adapter
         RecyclerView recyclerView = view.findViewById(R.id.rvItems);
+        recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), LinearLayoutManager.VERTICAL));
         mAdapter = new ItemAdapter(this);
         recyclerView.setAdapter(mAdapter);
         return view;
