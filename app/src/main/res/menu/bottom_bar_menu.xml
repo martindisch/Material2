@@ -4,7 +4,6 @@
     <item
         android:id="@+id/action_more"
         android:icon="@drawable/ic_more"
-        android:orderInCategory="0"
         android:title="@string/options"
         app:showAsAction="always" />
 </menu>

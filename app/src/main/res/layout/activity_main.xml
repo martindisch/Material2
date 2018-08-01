@@ -20,10 +20,6 @@
         android:background="@drawable/drop_shadow"
         app:layout_anchor="@id/bar" />
 
-    <!-- Because of the manually inserted drop shadow for the Bottom App Bar, it's not possible
-    to have the nicely inset FAB. To disable the inset, the cradle rounded corner radius is set
-    to 0dp and the cradle margin to -1dp. If the margin was only 0dp, some white pixels may remain
-    between the FAB and the Bottom App Bar (only if it has a tint other than white). -->
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bar"
         android:layout_width="match_parent"

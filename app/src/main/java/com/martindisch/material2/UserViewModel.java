@@ -35,11 +35,4 @@ public class UserViewModel extends ViewModel {
     public MutableLiveData<Boolean> getMarried() {
         return married;
     }
-
-    public void reset() {
-        name.setValue("");
-        address.setValue("");
-        vegetarian.setValue(false);
-        married.setValue(false);
-    }
 }
