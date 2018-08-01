@@ -54,21 +54,24 @@ public class MainActivity extends AppCompatActivity {
             // Get the Fragment currently in the container
             FragmentManager fragmentManager = getSupportFragmentManager();
             String tag = navigationViewModel.idToTag(selectedItem);
+            // Decide whether to show the FAB or not
+            if (navigationViewModel.showFab()) {
+                fab.setVisibility(View.VISIBLE);
+            } else {
+                fab.setVisibility(View.INVISIBLE);
+            }
             Fragment fragment = fragmentManager.findFragmentById(R.id.fragment_container);
             // Only replace fragment if the requested one is not already present
             if (fragment == null || !fragment.getTag().contentEquals(tag)) {
                 switch (selectedItem) {
                     case R.id.action_user:
                         fragment = UserFragment.newInstance();
-                        fab.setVisibility(View.INVISIBLE);
                         break;
                     case R.id.action_item:
                         fragment = ItemFragment.newInstance();
-                        fab.setVisibility(View.VISIBLE);
                         break;
                     default:
                         fragment = ItemFragment.newInstance();
-                        fab.setVisibility(View.VISIBLE);
                         break;
                 }
                 // Replace the fragment

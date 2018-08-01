@@ -37,4 +37,8 @@ public class NavigationViewModel extends ViewModel {
         int index = Arrays.asList(IDS).indexOf(id);
         return TAGS[index];
     }
+
+    public boolean showFab() {
+        return selectedItem.getValue() != R.id.action_user;
+    }
 }
