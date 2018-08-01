@@ -1,6 +1,7 @@
 package com.martindisch.material2;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.button.MaterialButton;
@@ -55,12 +56,15 @@ public class MainActivity extends AppCompatActivity {
                 switch (selectedItem) {
                     case R.id.action_user:
                         fragment = UserFragment.newInstance();
+                        fab.setVisibility(View.INVISIBLE);
                         break;
                     case R.id.action_item:
                         fragment = ItemFragment.newInstance();
+                        fab.setVisibility(View.VISIBLE);
                         break;
                     default:
                         fragment = ItemFragment.newInstance();
+                        fab.setVisibility(View.VISIBLE);
                         break;
                 }
                 // Replace the fragment
