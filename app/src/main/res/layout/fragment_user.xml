@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.martindisch.material2.UserViewModel" />
+            type="com.martindisch.material2.viewmodel.UserViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

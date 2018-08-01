@@ -1,4 +1,4 @@
-package com.martindisch.material2;
+package com.martindisch.material2.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.martindisch.material2.databinding.FragmentUserBinding;
+import com.martindisch.material2.viewmodel.UserViewModel;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;

@@ -1,10 +1,14 @@
-package com.martindisch.material2;
+package com.martindisch.material2.view;
 
 import android.os.Bundle;
 import android.view.View;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.button.MaterialButton;
+import com.martindisch.material2.R;
+import com.martindisch.material2.model.Item;
+import com.martindisch.material2.viewmodel.ItemListViewModel;
+import com.martindisch.material2.viewmodel.NavigationViewModel;
 
 import java.util.LinkedList;
 import java.util.Random;

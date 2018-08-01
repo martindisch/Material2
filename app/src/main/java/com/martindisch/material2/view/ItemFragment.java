@@ -1,10 +1,14 @@
-package com.martindisch.material2;
+package com.martindisch.material2.view;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.martindisch.material2.R;
+import com.martindisch.material2.model.Item;
+import com.martindisch.material2.viewmodel.ItemListViewModel;
 
 import java.util.LinkedList;
 

@@ -1,9 +1,10 @@
-package com.martindisch.material2;
+package com.martindisch.material2.view;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.martindisch.material2.databinding.ListItemBinding;
+import com.martindisch.material2.model.Item;
 
 import java.util.List;
 

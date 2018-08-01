@@ -1,4 +1,4 @@
-package com.martindisch.material2;
+package com.martindisch.material2.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.navigation.NavigationView;
+import com.martindisch.material2.R;
+import com.martindisch.material2.viewmodel.NavigationViewModel;
 
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProviders;

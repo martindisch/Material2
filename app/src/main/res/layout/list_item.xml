@@ -7,11 +7,11 @@
 
         <variable
             name="item"
-            type="com.martindisch.material2.Item" />
+            type="com.martindisch.material2.model.Item" />
 
         <variable
             name="onClickListener"
-            type="com.martindisch.material2.ItemAdapter.ItemCallback" />
+            type="com.martindisch.material2.view.ItemAdapter.ItemCallback" />
 
         <import type="androidx.core.content.ContextCompat" />
     </data>

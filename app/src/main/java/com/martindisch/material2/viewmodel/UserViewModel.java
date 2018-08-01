@@ -1,4 +1,4 @@
-package com.martindisch.material2;
+package com.martindisch.material2.viewmodel;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;

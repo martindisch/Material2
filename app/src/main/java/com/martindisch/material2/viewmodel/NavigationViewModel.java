@@ -1,4 +1,6 @@
-package com.martindisch.material2;
+package com.martindisch.material2.viewmodel;
+
+import com.martindisch.material2.R;
 
 import java.util.Arrays;
 
