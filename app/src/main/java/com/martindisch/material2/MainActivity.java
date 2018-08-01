@@ -6,6 +6,7 @@ import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.button.MaterialButton;
 
 import java.util.LinkedList;
+import java.util.Random;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -62,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
             LinkedList<Item> items = (LinkedList<Item>) listViewModel.getItems().getValue();
             // Clone it so we don't insert into the existing instance (DiffUtil wouldn't find difference)
             LinkedList<Item> newItems = (LinkedList<Item>) items.clone();
-            // Add item
-            newItems.add(5, new Item());
+            // Add item at a random position within the list
+            newItems.add(new Random().nextInt(items.size() + 1), new Item());
             listViewModel.getItems().setValue(newItems);
         });
     }
