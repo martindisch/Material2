@@ -8,11 +8,17 @@ import com.google.android.material.button.MaterialButton;
 import java.util.LinkedList;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProviders;
 
 public class MainActivity extends AppCompatActivity {
+
+    static {
+        // Make sure that vector drawables work on pre-Lollipop devices
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
