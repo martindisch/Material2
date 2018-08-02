@@ -29,8 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         BottomAppBar bottomAppBar = findViewById(R.id.bar);
         bottomAppBar.inflateMenu(R.menu.bottom_bar_menu);
-        BottomDrawerFragment bottomDrawer = new BottomDrawerFragment();
-        bottomAppBar.setNavigationOnClickListener(view -> bottomDrawer.show(getSupportFragmentManager(), "bottom_drawer"));
+        bottomAppBar.setNavigationOnClickListener(view -> new BottomDrawerFragment().show(getSupportFragmentManager(), "bottom_drawer"));
 
         ItemListViewModel listViewModel = ViewModelProviders.of(this).get(ItemListViewModel.class);
         MaterialButton fab = findViewById(R.id.fab);
