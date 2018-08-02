@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/userFragment">
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.martindisch.material2.view.UserFragment"
+        android:label="UserFragment"
+        tools:layout="@layout/fragment_user" />
+    <fragment
+        android:id="@+id/itemFragment"
+        android:name="com.martindisch.material2.view.ItemFragment"
+        android:label="ItemFragment"
+        tools:layout="@layout/fragment_item" />
+</navigation>

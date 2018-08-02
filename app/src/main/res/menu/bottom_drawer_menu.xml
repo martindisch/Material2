@@ -2,11 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/action_user"
+            android:id="@id/userFragment"
             android:icon="@drawable/ic_person"
             android:title="@string/user_data" />
         <item
-            android:id="@+id/action_item"
+            android:id="@id/itemFragment"
             android:icon="@drawable/ic_view_list"
             android:title="@string/overview" />
         <item

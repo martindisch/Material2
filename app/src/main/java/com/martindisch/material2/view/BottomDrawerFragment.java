@@ -9,21 +9,19 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.navigation.NavigationView;
 import com.martindisch.material2.R;
-import com.martindisch.material2.viewmodel.NavigationViewModel;
 
 import androidx.annotation.Nullable;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 public class BottomDrawerFragment extends BottomSheetDialogFragment {
-
-    private NavigationView mNavigationView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_bottom_drawer, container, false);
-        mNavigationView = view.findViewById(R.id.bottom_drawer_navigation);
+        NavigationView navigationView = view.findViewById(R.id.bottom_drawer_navigation);
 
         // Hack to get the sheet to fully expand in landscape (peek height is only about one list item by default)
         getDialog().setOnShowListener(dialog ->
@@ -31,6 +29,8 @@ public class BottomDrawerFragment extends BottomSheetDialogFragment {
             View bottomSheetInternal = getDialog().findViewById(R.id.design_bottom_sheet);
             BottomSheetBehavior.from(bottomSheetInternal).setState(BottomSheetBehavior.STATE_EXPANDED);
         });
+
+        NavigationUI.setupWithNavController(navigationView, Navigation.findNavController(getActivity(), R.id.nav_host_fragment));
         return view;
     }
 
@@ -38,23 +38,5 @@ public class BottomDrawerFragment extends BottomSheetDialogFragment {
     public int getTheme() {
         // Method override to return the custom dialog theme
         return R.style.BottomSheetDialogTheme;
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        // Acquire ViewModel
-        NavigationViewModel navigationViewModel = ViewModelProviders.of(getActivity()).get(NavigationViewModel.class);
-        // Since the layout has been newly inflated, we need to check the selected item
-        mNavigationView.setCheckedItem(navigationViewModel.getSelectedItem().getValue());
-
-        mNavigationView.setNavigationItemSelectedListener(menuItem -> {
-            // Hide the bottom sheet
-            dismiss();
-            // Update the ViewModel
-            navigationViewModel.getSelectedItem().setValue(menuItem.getItemId());
-            // Return true to show the selected item as checked
-            return true;
-        });
     }
 }
