@@ -30,7 +30,14 @@ public class BottomDrawerFragment extends BottomSheetDialogFragment {
             BottomSheetBehavior.from(bottomSheetInternal).setState(BottomSheetBehavior.STATE_EXPANDED);
         });
 
+        // Use NavController from NavigationView
         NavigationUI.setupWithNavController(navigationView, Navigation.findNavController(getActivity(), R.id.nav_host_fragment));
+        // Manually handle what happens after navigation so we can dismiss the dialog
+        Navigation.findNavController(getActivity(), R.id.nav_host_fragment).addOnNavigatedListener((controller, destination) -> {
+            if (getDialog() != null && getDialog().isShowing()) {
+                dismiss();
+            }
+        });
         return view;
     }
 
