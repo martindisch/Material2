@@ -5,6 +5,7 @@ Noteworthy elements are:
 * ViewModel
 * LiveData
 * Data Binding
+* Navigation
 * Material Components
 
 ## Screenshots
