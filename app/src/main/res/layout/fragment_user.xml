@@ -1,7 +1,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".UserFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -13,7 +12,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/activity_margin">
+        android:padding="@dimen/activity_margin"
+        tools:context=".view.UserFragment">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilName"
