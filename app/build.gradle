@@ -28,6 +28,7 @@ dependencies {
     def materialcomponents_version = "1.0.0-beta01"
     def constraintlayout_version = "1.1.2"
     def fragment_version = "1.0.0-beta01"
+    def nav_version = "1.0.0-alpha04"
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
@@ -37,5 +38,10 @@ dependencies {
     implementation "com.google.android.material:material:$materialcomponents_version"
     // Fragment
     implementation "androidx.fragment:fragment:$fragment_version"
+    // Navigation
+    // Ideally we'd use the androidx package here, but it's not ready yet
+    implementation "android.arch.navigation:navigation-fragment:$nav_version"
+    implementation "android.arch.navigation:navigation-ui:$nav_version"
+
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 }
