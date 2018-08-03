@@ -1,6 +1,7 @@
 package com.martindisch.material2.view;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.button.MaterialButton;
@@ -14,6 +15,7 @@ import java.util.Random;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.Navigation;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,6 +43,18 @@ public class MainActivity extends AppCompatActivity {
             // Add item at a random position within the list
             newItems.add(new Random().nextInt(items.size() + 1), new Item());
             listViewModel.getItems().setValue(newItems);
+        });
+
+        // On navigation change, show or hide the FAB depending on the destination
+        Navigation.findNavController(this, R.id.nav_host_fragment).addOnNavigatedListener((controller, destination) -> {
+            switch (destination.getId()) {
+                case R.id.itemFragment:
+                    fab.setVisibility(View.VISIBLE);
+                    break;
+                default:
+                    fab.setVisibility(View.INVISIBLE);
+                    break;
+            }
         });
     }
 }
