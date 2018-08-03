@@ -23,7 +23,7 @@ public class UserFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Obtain ViewModel
-        mViewModel = ViewModelProviders.of(this).get(UserViewModel.class);
+        mViewModel = ViewModelProviders.of(getActivity()).get(UserViewModel.class);
     }
 
     @Override
