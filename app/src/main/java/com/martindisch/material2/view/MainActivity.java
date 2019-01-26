@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // On navigation change, show or hide the FAB depending on the destination
-        Navigation.findNavController(this, R.id.nav_host_fragment).addOnNavigatedListener((controller, destination) -> {
+        Navigation.findNavController(this, R.id.nav_host_fragment).addOnDestinationChangedListener((controller, destination, arguments) -> {
             switch (destination.getId()) {
                 case R.id.itemFragment:
                     fab.setVisibility(View.VISIBLE);
